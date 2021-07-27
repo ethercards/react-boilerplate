@@ -19,7 +19,7 @@ const prod = {
 };
 
 const common = {
-    DAPP_ID: '3c7b6054-6292-481f-bd3a-af5687425e98',
+    APP_BASE_URL: 'https://YOUR_APP.ether.cards',
     LAYERS_BASE_URL: 'https://ether-cards.mypinata.cloud/ipfs/Qmcm7BjsmhwWVA611EZSGkxcqt3JmsbF9m37kPNhDLoy4o',
 }
 

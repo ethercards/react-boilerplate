@@ -35,9 +35,7 @@ function App(props) {
       setInitDone(false);
       try{
         const onboard = Onboard({
-          dappId: config.DAPP_ID,       // [String] The API key created by step one above
-          /* dappId: 'a53f6e8b-8255-45f7-bb90-c5ba428c8548', */       // [String] The API key created by step one above
-          networkId: DEPLOYED_CHAIN_ID,  // [Integer] The Ethereum network ID your Dapp uses.
+         networkId: DEPLOYED_CHAIN_ID,  // [Integer] The Ethereum network ID your Dapp uses.
           darkMode: true,
           blockPollingInterval:12000,
           walletSelect: {
@@ -151,7 +149,7 @@ function App(props) {
   } 
   return (
     <Web3Ctx.Provider value={{onboard,wallet,address,ethersProvider,chainId,connecting}}>
-      <div id="application">
+      <div id="application" className="h-100">
           <HashRouter basename='/'>
             <Switch>
               {routes.map((route, key)=>(

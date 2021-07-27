@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Navigation from '../Navigation/Navigation';
 import './Home.css';
 import { toast } from 'react-toast';
 import Web3Ctx from '../Context/Web3Ctx';
 import { getContract } from '../Utils/GetContract';
-import Address from '../common/Address';
+import config from '../../config'
+import { ECNav, ECAddress, ECFooter } from 'ec-commons';
 
 const Home = (props) => {
 
-    const {ethersProvider,address} = useContext(Web3Ctx);
+    const {onboard,ethersProvider,address} = useContext(Web3Ctx);
 
     const [tokenId,setTokenId] = useState('');
     const [contract,setContract] = useState(null);
@@ -50,13 +50,13 @@ const Home = (props) => {
 
     return (
         <>
-            <Navigation/>
+            <ECNav projectUrl={config.APP_BASE_URL} onboard={onboard} address={address} />
             <div className="container mt-5 h-100 home">
                 <div className="row">
                     
                     <div className="col-md-6 mx-auto">
                         {address && 
-                         <div className="mb-3">Connected as  <Address address={address} blockie short/></div> 
+                         <div className="mb-3">Connected as  <ECAddress address={address} blockie short/></div> 
                         }
 
 
@@ -69,6 +69,7 @@ const Home = (props) => {
                 </div>
 
             </div>
+            <ECFooter/>
         </>
     );
 
